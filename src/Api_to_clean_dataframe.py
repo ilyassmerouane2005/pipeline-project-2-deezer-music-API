@@ -13,11 +13,11 @@ print('Keys in the tracks data:', data['tracks']['data'][0].keys())
 df = pl.DataFrame(data['tracks']['data'])
 df = df.select([
     'id' ,
-    'title' ,
-    'link' ,  
-    'duration' ,
+    pl.col('title').str.strip_chars().str.to_lowercase().alias('title') ,
+    pl.col('artist').struct.field('name').str.strip_chars().str.to_lowercase().alias('artist_name') ,
+    pl.col('duration').alias('duration in seconds') ,  
     'rank' ,
-    'preview' ,
-    'position' , 
-    pl.col('artist').struct.field('name').alias('artist_name')
+    pl.col('preview').alias('preview_url') ,
+    pl.col('link').alias('track_link_url')
 ])
+print(df)
