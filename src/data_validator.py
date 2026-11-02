@@ -17,16 +17,3 @@ class Track(BaseModel):
     preview : Optional[str] = None
     artist : Artist
     type : str
-
-
-class Playlist(BaseModel):
-
-    id : int 
-    title : str 
-    public : bool
-    nb_tracks : int
-    link : Optional[str] = None
-    picture : Optional[str] = None
-    creation_date : str
-    tracklist : str
-    type : str

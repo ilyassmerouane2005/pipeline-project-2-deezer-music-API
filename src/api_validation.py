@@ -1,6 +1,6 @@
 import requests 
 from pydantic import ValidationError as PydanticValidationError
-from data_validator import Track , Playlist
+from data_validator import Track
 import polars as pl
 import logging
 logging.basicConfig(level=logging.INFO , format='%(asctime)s - %(levelname)s - %(message)s' , datefmt='%Y-%m-%d %H:%M:%S')
@@ -23,12 +23,3 @@ except KeyError as e:
     logging.error(f"KeyError occurred while accessing tracks data or: {e}")
 except PydanticValidationError as e:
     logging.error(f"An unexpected error occurred while validating tracks data: {e}")
-
-try :
-    playlists = response['playlists']['data']
-    valid_playlists = [Playlist(**playlist) for playlist in playlists]
-    logging.info("Playlists data validated successfully.")
-except KeyError as e:
-    logging.error(f"KeyError occurred while accessing playlists data: {e}")
-except PydanticValidationError as e:
-    logging.error(f"An unexpected error occurred while validating playlists data: {e}")

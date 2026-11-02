@@ -46,7 +46,6 @@ response_podcasts_sections_total = response['podcasts']['total']
 print( 'The total number of podcasts in the response is:', response_podcasts_sections_total)
 
 """
-this api has 5 big sections every section has 10 rows :
-section 1) tracks : we will create a dataframe with the columns : id , title , link , duration , rank , preview , (from artist we will select name) , type 
-section 4) playlists : we will create a dataframe with the columns : id , title , public , nb_tracks , link , picture , creation_date , tracklist , type
+this api has 5 big sections every section has 10 rows : we will work on the 
+section tracks : we will create a dataframe with the columns : id , title , link , duration , rank , preview , (from artist we will select name) , type 
 """
