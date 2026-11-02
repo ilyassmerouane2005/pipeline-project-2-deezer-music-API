@@ -1,6 +1,6 @@
 import requests 
 from pydantic import ValidationError as PydanticValidationError
-from data_validator import Track
+from src.data_validator import Track
 import polars as pl
 import logging
 logging.basicConfig(level=logging.INFO , format='%(asctime)s - %(levelname)s - %(message)s' , datefmt='%Y-%m-%d %H:%M:%S')
